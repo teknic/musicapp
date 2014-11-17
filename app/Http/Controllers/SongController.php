@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Controller;
 
-class MusicController extends Controller {
+class SongController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -11,7 +11,7 @@ class MusicController extends Controller {
 	 */
 	public function index()
 	{
-		return view('music.music');
+		//
 	}
 
 	/**
