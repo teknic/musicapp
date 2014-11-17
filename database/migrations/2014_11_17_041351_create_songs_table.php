@@ -19,6 +19,8 @@ class CreateSongsTable extends Migration {
       $table->longtext('lyrics');
       $table->float('length');
       $table->string('video_link');
+      $table->integer('album_id')->unsigned();
+      $table->foreign('album_id')->references('id')->on('albums');
 			$table->timestamps();
 		});
 	}
