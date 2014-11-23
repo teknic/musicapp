@@ -11,12 +11,14 @@ class AlbumController extends Controller {
 	/**
 	 * Display a listing of the resource.
 	 *
+   * @param $artist
+   *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Artist $artist)
 	{
-    $albums = Albums::all();
-    return view('album.index')->with('albums', $albums);
+    $albums = Album::where('artist_id', '=', $artist->id)->get();
+    return view('album.index')->with('albums', $albums)->with('artist', $artist);
 	}
 
 	/**
