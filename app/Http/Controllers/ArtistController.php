@@ -14,7 +14,7 @@ class ArtistController extends Controller {
 	public function index()
 	{
 		$artists = Artist::all();
-    return $artists;
+    return view('artist.index')->with('artists', $artists);
 	}
 
 	/**
@@ -45,12 +45,12 @@ class ArtistController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param $artist
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Artist $artist)
 	{
-		//
+		return view('artist.show')->with('artist', $artist);
 	}
 
 	/**

@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Artist extends Eloquent {
 
-  // Explicit fields for mass assignement 
+  // Explicit fields for mass assignment.
   protected $fillable = [
     'name', 'genre', 'slug'
   ];

@@ -22,7 +22,8 @@ $router->post('music/artists', ['as' => 'artist_store_path', 'uses' => 'ArtistCo
 // Album routes
 $router->get('/music/{artist}/albums', ['as' => 'albums_path', 'uses' => 'AlbumController@index']);
 $router->get('/music/{artist}/{album}', ['as' => 'album_path', 'uses' => 'AlbumController@show']);
-$router->get('/music/{artist}/album/add', ['as' => 'album_path', 'uses' => 'AlbumController@create']);
+$router->get('/album/create', ['as' => 'album_create_path', 'uses' => 'AlbumController@create']);
+$router->post('music/{artist}/albums', ['as' => 'album_store_path', 'uses' => 'AlbumController@store']);
 
 // Song routes
 $router->get('/music/{artist}/{album}/{song}', ['as' => 'song_path', 'uses' => 'SongController@show']);
