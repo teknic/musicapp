@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Artist;
 
 class ArtistController extends Controller {
@@ -14,7 +15,6 @@ class ArtistController extends Controller {
 	{
 		$artists = Artist::all();
     return $artists;
-    // return view('artist.index', compact($artists));
 	}
 
 	/**
@@ -24,17 +24,22 @@ class ArtistController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('artist.create');
 	}
 
 	/**
 	 * Store a newly created resource in storage.
+   *
+   * @param $request
+   * @param $artist
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request, Artist $artist)
 	{
-		//
+    // Create the artist record from input fields.
+    $artist->create($request->all());
+    return redirect()->route('artists_path');
 	}
 
 	/**

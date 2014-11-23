@@ -21,6 +21,7 @@ class CreateSongsTable extends Migration {
       $table->string('video_link');
       $table->integer('album_id')->unsigned();
       $table->foreign('album_id')->references('id')->on('albums');
+      $table->string('slug')->unique();
 			$table->timestamps();
 		});
 	}

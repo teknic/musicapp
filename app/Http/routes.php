@@ -14,12 +14,16 @@ Route::bind('song', function($song) {
 });
 
 // Artists routes
-$router->get('/artists', ['as' => 'artists_path', 'uses' => 'ArtistController@index']);
-$router->get('/artist/{artist}', ['as' => 'artist_path', 'uses' => 'ArtistController@show']);
+$router->get('/music/artists', ['as' => 'artists_path', 'uses' => 'ArtistController@index']);
+$router->get('/music/{artist}', ['as' => 'artist_path', 'uses' => 'ArtistController@show']);
+$router->get('/music/artist/create', ['as' => 'artist_create_path', 'uses' => 'ArtistController@create']);
+$router->post('music/artists', ['as' => 'artist_store_path', 'uses' => 'ArtistController@store']);
 
 // Album routes
-$router->get('/artist/{artist}/albums', ['as' => 'albums_path', 'uses' => 'AlbumController@index']);
-$router->get('/artist/{artist}/{album}', ['as' => 'album_path', 'uses' => 'AlbumController@show']);
+$router->get('/music/{artist}/albums', ['as' => 'albums_path', 'uses' => 'AlbumController@index']);
+$router->get('/music/{artist}/{album}', ['as' => 'album_path', 'uses' => 'AlbumController@show']);
+$router->get('/music/{artist}/album/add', ['as' => 'album_path', 'uses' => 'AlbumController@create']);
 
 // Song routes
-$router->get('/artist/{artist}/{album}/{song}', ['as' => 'song_path', 'uses' => 'SongController@show']);
+$router->get('/music/{artist}/{album}/{song}', ['as' => 'song_path', 'uses' => 'SongController@show']);
+$router->get('/music/{artist}/{album}/song/add', ['as' => 'song_path', 'uses' => 'SongController@create']);
