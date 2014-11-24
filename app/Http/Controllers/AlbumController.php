@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Artist;
 use App\Models\Album;
 use App\Models\Files;
+use App\Models\Song;
 use Illuminate\Http\Request;
 
 class AlbumController extends Controller {
@@ -82,12 +83,15 @@ class AlbumController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param $artist
+   * @param $album
+   *
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Artist $artist, Album $album)
 	{
-		//
+    $songs = Song::where('album_id', '=', $album->id)->get();
+		return view('album.show')->with('artist', $artist)->with('album', $album)->with('songs', $songs);
 	}
 
 	/**

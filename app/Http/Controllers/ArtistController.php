@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Artist;
+use App\Models\Album;
 
 class ArtistController extends Controller {
 
@@ -50,7 +51,8 @@ class ArtistController extends Controller {
 	 */
 	public function show(Artist $artist)
 	{
-		return view('artist.show')->with('artist', $artist);
+    $albums = Album::where('artist_id', '=', $artist->id)->get();
+		return view('artist.show')->with('artist', $artist)->with('albums', $albums);
 	}
 
 	/**
