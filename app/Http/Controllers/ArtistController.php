@@ -18,6 +18,17 @@ class ArtistController extends Controller {
     return view('artist.index')->with('artists', $artists);
 	}
 
+  /**
+   *
+   *
+   * @return mixed
+   */
+  public function apiIndex() {
+    $artists = Artist::with('album')->get();
+    $json = $artists->toJson();
+    return $json;
+  }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

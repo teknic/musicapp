@@ -1,6 +1,9 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
+
 
 class Artist extends Eloquent {
 
@@ -8,4 +11,9 @@ class Artist extends Eloquent {
   protected $fillable = [
     'name', 'genre', 'slug'
   ];
+
+  public function album()
+  {
+    return $this->hasMany('App\Models\Album', 'artist_id', 'id');
+  }
 }

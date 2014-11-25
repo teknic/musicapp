@@ -13,6 +13,15 @@ Route::bind('song', function($song) {
   return App\Models\Song::where('slug', $song)->first();
 });
 
+// Default route for Angular
+$router->get('/', function() {
+  return view('music.index');
+});
+
+// Laravel Routes
+$router->get('/api/artists', ['as' => 'api_artists_path', 'uses' => 'ArtistController@apiIndex']);
+
+
 // Artists routes
 $router->get('/music/artists', ['as' => 'artists_path', 'uses' => 'ArtistController@index']);
 $router->get('/music/{artist}', ['as' => 'artist_path', 'uses' => 'ArtistController@show']);
