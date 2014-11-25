@@ -26,7 +26,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'TheChronic.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '12000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => '2001.jpg',
               'location' => $path . '2001.jpg',
@@ -42,7 +44,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'Doggystyle.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '26000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'Tha-doggfather.jpg',
               'location' => $path . 'Tha-doggfather.jpg',
@@ -58,7 +62,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'Illmatic.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '13000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'it-was-written.jpg',
               'location' => $path . 'it-was-written.jpg',
@@ -74,7 +80,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'The_Slim_Shady_LP.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '17000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'The_Marshall_Mathers_LP.jpg',
               'location' => $path . 'The_Marshall_Mathers_LP.jpg',
@@ -90,7 +98,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'Almost_Famous.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '20000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'Creativecover.jpg',
               'location' => $path . 'Creativecover.jpg',
@@ -106,7 +116,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . '93tillinfinity.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '11000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'Focus.jpg',
               'location' => $path . 'Focus.jpg',
@@ -122,7 +134,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'Third_Eye_Vision.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '17000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'Full_Circle.jpg',
               'location' => $path . 'Full_Circle.jpg',
@@ -138,7 +152,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'fourcast.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '8000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'state_of_the_art.jpg',
               'location' => $path . 'state_of_the_art.jpg',
@@ -154,7 +170,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'Toxicity.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '20000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'Mezmerize.jpg',
               'location' => $path . 'Mezmerize.jpg',
@@ -170,7 +188,9 @@ class FileTableSeeder extends Seeder {
               'location' => $path . 'Elect_The_Dead.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '16000',
-            ),
+            )
+          );
+          Files::create(
             array(
               'filename' => 'Imperfect_Harmonies.jpg',
               'location' => $path . 'Imperfect_Harmonies.jpg',
