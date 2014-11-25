@@ -2,18 +2,18 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use App\Models\Song;
 use App\Models\Artist;
 use App\Models\Album;
+use App\Models\Files;
 
-class SongTableSeeder extends Seeder {
+class FileTableSeeder extends Seeder {
 
   public function run()
   {
     // Allow mass assignment.
     Eloquent::unguard();
     // Delete all data.
-    DB::table('songs')->delete();
+    DB::table('files')->delete();
 
     // Get all artists with albums
     $artists = Artist::with('album')->get();
@@ -42,7 +42,5 @@ class SongTableSeeder extends Seeder {
 
       }
     }
-
   }
-
 }

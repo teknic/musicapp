@@ -40,7 +40,7 @@ class AlbumTableSeeder extends Seeder {
           break;
         case 'living_legends':
           // Create the following.
-          Album::create(array('name' => 'Foxhole EP', 'year' => '1999', 'label' => 'Legendary Music', 'picture' => '', 'artist_id' => $artist->id, 'slug' => 'Foxhole EP'));
+          Album::create(array('name' => 'Almost Famous', 'year' => '2001', 'label' => 'Legendary Music', 'picture' => '', 'artist_id' => $artist->id, 'slug' => 'almost_famous'));
           Album::create(array('name' => 'Creative Differences', 'year' => '2004', 'label' => 'Legendary Music', 'picture' => '', 'artist_id' => $artist->id, 'slug' => 'creative_differences'));
           break;
         case 'souls_of_mischief':

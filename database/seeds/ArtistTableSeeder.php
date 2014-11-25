@@ -22,7 +22,7 @@ class ArtistTableSeeder extends Seeder {
     Artist::create(array('name' => 'Optimus Rhymes', 'genre' => 'Hip Hop', 'slug' => 'optimus_rhymes'));
     Artist::create(array('name' => 'Hieroglyphics', 'genre' => 'Hip Hop', 'slug' => 'hieroglyphics'));
     Artist::create(array('name' => 'System of a Down', 'genre' => 'Alternative Metal', 'slug' => 'system_of_a_down'));
-    Artist::create(array('name' => 'Serj Tankian', 'genre' => 'Alternative Meta', 'slug' => 'serj_tankian'));
+    Artist::create(array('name' => 'Serj Tankian', 'genre' => 'Alternative Metal', 'slug' => 'serj_tankian'));
   }
 
 }
