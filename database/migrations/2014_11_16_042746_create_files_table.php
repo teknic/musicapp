@@ -5,33 +5,30 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateFilesTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('files', function(Blueprint $table)
-		{
-			$table->increments('id');
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up() {
+    Schema::create('files', function (Blueprint $table) {
+      $table->increments('id');
       $table->string('filename');
       $table->string('location');
       $table->string('filemime');
       $table->string('filesize');
       $table->softDeletes();
-			$table->timestamps();
-		});
-	}
+      $table->timestamps();
+    });
+  }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('files');
-	}
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down() {
+    Schema::drop('files');
+  }
 
 }

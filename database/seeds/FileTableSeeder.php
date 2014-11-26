@@ -15,11 +15,22 @@ class FileTableSeeder extends Seeder {
     DB::table('files')->delete();
 
     // Get all artists with albums
-    $artists = Artist::all();
+    $artists = array(
+      'dr_dre',
+      'snoop_dogg',
+      'nas',
+      'eminem',
+      'living_legends',
+      'hieroglyphics',
+      'souls_of_mischief',
+      'optimus_rhymes',
+      'system_of_a_down',
+      'serj_tankian'
+    );
     $path = '/storage/album_covers/';
     $artist_path = '/storage/artists/';
     foreach ($artists as $artist) {
-      switch ($artist->slug) {
+      switch ($artist) {
         case 'dr_dre':
           Files::create(
             array(
@@ -247,7 +258,7 @@ class FileTableSeeder extends Seeder {
           );
           Files::create(
             array(
-              'filename' => 'sytemofadown.jpg',
+              'filename' => 'systemofadown.jpg',
               'location' => $artist_path . 'systemofadown.jpg',
               'filemime' => 'image/jpeg',
               'filesize' => '124000',

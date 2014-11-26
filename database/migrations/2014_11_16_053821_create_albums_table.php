@@ -5,16 +5,14 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateAlbumsTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('albums', function(Blueprint $table)
-		{
-			$table->increments('id');
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up() {
+    Schema::create('albums', function (Blueprint $table) {
+      $table->increments('id');
       $table->string('name');
       $table->date('year');
       $table->string('label');
@@ -23,18 +21,17 @@ class CreateAlbumsTable extends Migration {
       $table->integer('artist_id')->unsigned();
       $table->foreign('artist_id')->references('id')->on('artists');
       $table->string('slug')->unique();
-			$table->timestamps();
-		});
-	}
+      $table->timestamps();
+    });
+  }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('albums');
-	}
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down() {
+    Schema::drop('albums');
+  }
 
 }
