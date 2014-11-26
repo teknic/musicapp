@@ -1,0 +1,18 @@
+<div class="panel panel-default bootcards-summary">
+
+    <h1 class="text-center">Artists</h1>
+
+    <div class="panel-body">
+        <div class="row">
+            <div ng-repeat="artist in artists" class="col-xs-6 col-sm-4"
+                 style="background:lightcyan;">
+                <a class="bootcards-summary-item" href="#">
+                    <i class="fa fa-3x fa-users"></i>
+                    <h4>{{ artist.name }}</h4>
+                    <span class="label label-info">{{artist.genre}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

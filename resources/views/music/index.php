@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Music App</title>
+  <base href="/">
   <!-- CSS -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootcards CSS for desktop: -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/css/bootcards-desktop.min.css">
+
   <!-- JS -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-route.js"></script>
+  <!-- Bootstrap and Bootcards JS -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/js/bootcards.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
   <!-- ANGULAR -->
-  <!-- all angular resources will be loaded from the /public folder -->
-  <script src="js/controllers/mainController.js"></script> <!-- load our controller -->
-  <script src="js/services/artistService.js"></script> <!-- load our service -->
-  <script src="js/app.js"></script> <!-- load our application -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers/artistController.js"></script>
+  <script src="js/services/artistService.js"></script>
 
 </head>
-<body class="container" ng-app="musicApp" ng-controller="mainController">
-The Start of Angular
-
-<!-- show loading icon if the loading variable is set to true -->
-<p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>
-
-<!-- hide these comments if the loading variable is true -->
-<div class="artists" ng-hide="loading" ng-repeat="artist in artists">
-  <h3>{{ artist.name }}</h3>
-</div>
-
+<body class="container" ng-app="musicApp" ng-controller="artistController" style="background:white;">
+  <div id="main" ng-view>
+  </div>
 </body>
 </html>
