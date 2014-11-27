@@ -5,7 +5,7 @@
         <div class="row">
             <div ng-repeat="artist in artists" class="col-xs-6 col-sm-4"
                  style="background:lightcyan;">
-                <a class="bootcards-summary-item" href="#">
+                <a class="bootcards-summary-item" ng-href="/music/{{artist.slug}}">
                     <i class="fa fa-3x fa-users"></i>
                     <h4 style="float:right;">{{ artist.name }}</h4>
                     <span class="label label-info">{{artist.genre}}</span>

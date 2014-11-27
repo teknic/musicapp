@@ -18,23 +18,26 @@ class ArtistController extends Controller {
   }
 
   /**
-   *
+   * Returns the artists with associated pictures in JSON format.
    *
    * @return mixed
    */
   public function apiIndex() {
-    $artists = Artist::with('album')->with('picture')->get();
+    $artists = Artist::with('album', 'picture')->get();
     $json = $artists->toJson();
     return $json;
   }
 
   /**
-   *
+   * Returns the single artist identified by slug
+   * with the associated albums and album pictures.
    *
    * @return mixed
    */
-  public function angularIndex() {
-    return view('music.index');
+  public function apiShow(Artist $artist) {
+    $artist = Artist::with('album', 'album.picture')->where('slug', '=', $artist->slug)->first();
+    $json = $artist->toJson();
+    return $json;
   }
 
   /**

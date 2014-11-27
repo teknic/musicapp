@@ -10,6 +10,10 @@ musicApp.config(function ($routeProvider, $locationProvider) {
       templateUrl: 'js/pages/artists.html',
       controller: 'artistController'
     }).
+    when('/music/:artist_slug', {
+      templateUrl: 'js/pages/artist.html',
+      controller: 'artistController'
+    }).
     otherwise({
       redirectTo: '/'
     });
