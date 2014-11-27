@@ -14,13 +14,10 @@ Route::bind('song', function($song) {
 });
 
 // Default route for Angular
-$router->get('/', function() {
-  return view('music.index');
-});
+$router->get('/', ['as' => 'angular_main_path', 'uses' => 'ArtistController@angularIndex']);
 
 // Laravel Routes
 $router->get('/api/artists', ['as' => 'api_artists_path', 'uses' => 'ArtistController@apiIndex']);
-
 
 // Artists routes
 $router->get('/music/artists', ['as' => 'artists_path', 'uses' => 'ArtistController@index']);

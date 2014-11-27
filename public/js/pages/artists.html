@@ -7,8 +7,13 @@
                  style="background:lightcyan;">
                 <a class="bootcards-summary-item" href="#">
                     <i class="fa fa-3x fa-users"></i>
-                    <h4>{{ artist.name }}</h4>
+                    <h4 style="float:right;">{{ artist.name }}</h4>
                     <span class="label label-info">{{artist.genre}}</span>
+                    <img style="float:left; margin-top:-20px" width="120" height="110" ng-src="{{ artist.picture.location }} " />
+                    <!--<div class="buttons-cont" style="float:right; margin-top:55px; margin-right:-55px;">-->
+                        <!--<button type="button" class="btn btn-primary">Info</button>-->
+                        <!--<button type="button" class="btn btn-success">Albums</button>-->
+                    <!--</div>-->
                 </a>
             </div>
         </div>

@@ -18,6 +18,6 @@ class Artist extends Eloquent {
   }
 
   public function picture() {
-    return $this->hasOne('App\Models\Files', 'picture', 'id');
+    return $this->hasOne('App\Models\Files', 'id', 'picture');
   }
 }

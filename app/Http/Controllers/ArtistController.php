@@ -23,9 +23,18 @@ class ArtistController extends Controller {
    * @return mixed
    */
   public function apiIndex() {
-    $artists = Artist::with('album')->get();
+    $artists = Artist::with('album')->with('picture')->get();
     $json = $artists->toJson();
     return $json;
+  }
+
+  /**
+   *
+   *
+   * @return mixed
+   */
+  public function angularIndex() {
+    return view('music.index');
   }
 
   /**

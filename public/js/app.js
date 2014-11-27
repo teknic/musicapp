@@ -1,7 +1,7 @@
 'use strict';
 
 var musicApp = angular.module('musicApp', [
-  'ngRoute', 'artistController', 'artistService',
+  'ngRoute', 'ngAnimate', 'artistController', 'artistService',
 ]);
 
 musicApp.config(function ($routeProvider, $locationProvider) {
