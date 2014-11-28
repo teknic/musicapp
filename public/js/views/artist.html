@@ -1,0 +1,23 @@
+<div class="panel panel-default bootcards-summary">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-2">
+                <!--Sidebar content-->
+                <h2>{{ artist.name }}</h2>
+                <img class="img-thumbnail" width="120" height="110" ng-src="{{ artist.picture.location }} " />
+                <span class="label label-info">{{artist.genre}}</span>
+            </div>
+            <div class="col-md-9">
+                <!--Body content-->
+                <h2>Albums</h2>
+                <div class="albums container-fluid">
+                    <div ng-repeat="album in artist.album">
+                        <a ng-href="/music/{{ artist.slug }}/{{album.slug}}"><div class="col-md-4">{{ album.name }}</div></a>
+                        <div class="col-md-4">{{ album.year }}</div>
+                        <div class="col-md-4">{{ album.label }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
