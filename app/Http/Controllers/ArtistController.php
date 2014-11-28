@@ -35,7 +35,7 @@ class ArtistController extends Controller {
    * @return mixed
    */
   public function apiShow(Artist $artist) {
-    $artist = Artist::with('album', 'album.picture')->where('slug', '=', $artist->slug)->first();
+    $artist = Artist::with('picture', 'album', 'album.picture')->where('slug', '=', $artist->slug)->first();
     $json = $artist->toJson();
     return $json;
   }

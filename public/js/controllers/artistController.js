@@ -5,7 +5,6 @@ var musicApp = angular.module('artistController', []);
 musicApp.controller('artistController', function($scope, $http, Artist) {
     $scope.artists = {};
     $scope.loading = true;
-    $scope.pageClass = 'page-artists'
     var page = location.pathname;
 
     if (page == '/') {
@@ -13,6 +12,7 @@ musicApp.controller('artistController', function($scope, $http, Artist) {
         function($data) {
           $scope.artists = $data;
           $scope.loading = false;
+          $scope.pageClass = 'page-artists'
         }
       )
     }
@@ -22,6 +22,7 @@ musicApp.controller('artistController', function($scope, $http, Artist) {
         function($data) {
           $scope.artist = $data;
           $scope.loading = false;
+          $scope.pageClass = 'page-artist'
         }
       )
     }

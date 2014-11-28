@@ -26,6 +26,16 @@
 
 </head>
 <body class="container" ng-app="musicApp" ng-controller="artistController" style="background:slategrey;">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img alt="Brand" height="50" width="50" ng-src="/storage/icons/music_icon.png" style="margin:-15px 0px 0px -18px;">
+      </a>
+      <button type="button" class="btn btn-default navbar-btn">Home</button>
+      <button type="button" class="btn btn-default navbar-btn">Profile</button>
+    </div>
+  </nav>
+
   <div class="page {{pageClass}} " id="main" ng-view>
   </div>
 </body>

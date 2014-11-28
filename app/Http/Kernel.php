@@ -31,12 +31,20 @@ class Kernel extends HttpKernel {
 		{
 			return parent::handle($request);
 		}
-		catch (Exception $e)
-		{
-			$this->reportException($e);
-
-			return $this->renderException($request, $e);
-		}
+        catch(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e)
+        {
+          return $this->app->make('Illuminate\Routing\ResponseFactory')->view('music.index');
+        }
+        catch (Exception $e)
+        {
+          throw $e;
+        }
+//		catch (Exception $e)
+//		{
+//			$this->reportException($e);
+//
+//			return $this->renderException($request, $e);
+//		}
 	}
 
 }

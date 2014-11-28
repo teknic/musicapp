@@ -7,11 +7,11 @@ var musicApp = angular.module('musicApp', [
 musicApp.config(function ($routeProvider, $locationProvider) {
   $routeProvider.
     when('/', {
-      templateUrl: 'js/pages/artists.html',
+      templateUrl: 'js/views/artists.html',
       controller: 'artistController'
     }).
     when('/music/:artist_slug', {
-      templateUrl: 'js/pages/artist.html',
+      templateUrl: 'js/views/artist.html',
       controller: 'artistController'
     }).
     otherwise({
