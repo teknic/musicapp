@@ -1,8 +1,6 @@
 'use strict';
 
-var musicApp = angular.module('musicApp', [
-  'ngRoute', 'ngAnimate', 'artistController', 'artistService',
-]);
+var musicApp = angular.module('musicApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
 musicApp.config(function ($routeProvider, $locationProvider) {
   $routeProvider.
@@ -17,5 +15,7 @@ musicApp.config(function ($routeProvider, $locationProvider) {
     otherwise({
       redirectTo: '/'
     });
+
   $locationProvider.html5Mode(true);
+
 });

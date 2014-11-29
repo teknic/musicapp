@@ -1,4 +1,4 @@
-var musicApp = angular.module('artistService', []);
+'use strict';
 
 musicApp.factory('Artist', function ($http) {
   return {
