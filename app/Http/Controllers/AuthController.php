@@ -4,6 +4,7 @@ use Illuminate\Contracts\Auth\Guard;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use Illuminate\Support\Facades\Input;
 
 class AuthController extends Controller {
 
@@ -72,6 +73,17 @@ class AuthController extends Controller {
     return redirect('/auth/login')->withErrors([
       'email' => 'These credentials do not match our records.',
     ]);
+  }
+
+  public function apiLogin() {
+    $email = Input::get('email');
+    $password = Input::get('password');
+
+    if ($this->auth->attempt(array('email' => $email, 'password' => $password), TRUE)) {
+      return response()->json(['valid' => TRUE]);
+    }
+
+    return response()->json(['valid' => FALSE]);
   }
 
   /**

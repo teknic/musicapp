@@ -1,11 +1,11 @@
-<form class="form-horizontal" role="form" name="login" novalidate ng-submit="submit(myForm)">
+<form class="form-horizontal" role="form" name="login" novalidate ng-submit="submit()">
     <div class="modal-header">
         <h4>Login</h4>
     </div>
     <div class="form-group">
         <label for="loginEmail" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-8">
-            <input type="email" class="form-control" id="loginEmail" placeholder="Email" ng-model="user.email">
+            <input type="text" class="form-control" id="loginEmail" placeholder="Email" ng-model="user.email">
         </div>
     </div>
     <div class="form-group">

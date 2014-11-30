@@ -49,6 +49,10 @@
     <script src="js/controllers/menuController.js"></script>
     <script src="js/controllers/modalController.js"></script>
     <script src="js/services/artistService.js"></script>
+    <script src="js/services/userService.js"></script>
+    <script>
+      angular.module("musicApp").constant("CSRF_TOKEN", '<?php echo csrf_token(); ?>');
+    </script>
   </footer>
 </body>
 </html>

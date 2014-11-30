@@ -1,6 +1,6 @@
 'use strict';
 
-musicApp.factory('Artist', function ($http) {
+musicApp.factory('ArtistService', function ($http) {
   return {
     // get all the artists
     get: function () {

@@ -1,13 +1,13 @@
 'use strict';
 
-musicApp.controller('artistController', function($scope, $http, Artist) {
+musicApp.controller('artistController', function($scope, $http, ArtistService) {
 
     $scope.artists = {};
     $scope.loading = true;
     var page = location.pathname;
 
     if (page == '/') {
-      Artist.get().success(
+      ArtistService.get().success(
         function($data) {
           $scope.artists = $data;
           $scope.loading = false;
@@ -17,7 +17,7 @@ musicApp.controller('artistController', function($scope, $http, Artist) {
     }
     else {
       var params = page.split('/');
-      Artist.getBySlug(params[2]).success(
+      ArtistService.getBySlug(params[2]).success(
         function($data) {
           $scope.artist = $data;
           $scope.loading = false;
