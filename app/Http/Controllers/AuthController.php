@@ -79,7 +79,7 @@ class AuthController extends Controller {
     $email = Input::get('email');
     $password = Input::get('password');
 
-    if ($this->auth->attempt(array('email' => $email, 'password' => $password), TRUE)) {
+    if ($this->auth->attempt(array('email' => $email, 'password' => $password))) {
       return response()->json(['valid' => TRUE]);
     }
 

@@ -1,11 +1,16 @@
 'use strict';
 
-musicApp.controller('menuController', function($scope, $modal) {
+musicApp.controller('menuController', function($scope, $modal, SessionService) {
 
   $scope.user = {
     email: null,
-    password: null
+    password: null,
+    loggedIn: false
   };
+
+  if (SessionService.get('auth')) {
+    $scope.user.loggedIn = true;
+  }
 
   $scope.open = function () {
     $modal.open({

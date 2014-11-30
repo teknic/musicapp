@@ -1,6 +1,6 @@
 'use strict';
 
-musicApp.controller('modalController', function ($scope, $modalInstance, user, UserService) {
+musicApp.controller('modalController', function ($scope, $modalInstance, user, UserService, SessionService) {
 
   $scope.user = user;
   $scope.submit = function () {
@@ -9,6 +9,7 @@ musicApp.controller('modalController', function ($scope, $modalInstance, user, U
       function($data) {
         if ($data.valid == true) {
           $scope.user.loggedIn = true;
+          SessionService.set('auth',true);
         }
       }
     );

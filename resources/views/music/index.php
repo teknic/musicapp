@@ -22,7 +22,8 @@
         </a>
         <button type="button" class="btn btn-default navbar-btn">Home</button>
         <button type="button" class="btn btn-default navbar-btn">Profile</button>
-        <button type="button" class="btn btn-default navbar-btn" ng-click="open();">Login</button>
+        <button type="button" ng-hide="user.loggedIn" class="btn btn-default navbar-btn" ng-click="open();">Login</button>
+        <button type="button" ng-show="!user.lggedIn" class="btn btn-default navbar-btn" ng-click="logout();">Logout</button>
       </div>
     </nav>
   </header>
@@ -50,6 +51,7 @@
     <script src="js/controllers/modalController.js"></script>
     <script src="js/services/artistService.js"></script>
     <script src="js/services/userService.js"></script>
+    <script src="js/services/sessionService.js"></script>
     <script>
       angular.module("musicApp").constant("CSRF_TOKEN", '<?php echo csrf_token(); ?>');
     </script>
